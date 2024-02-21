@@ -1,0 +1,84 @@
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  background-color: #333;
+  color: white;
+  position: fixed;
+  top: 0;
+  padding: 20px;
+  transition: width 0.5s;
+  //   white-space: nowrap; /* Сворачивание текста в одну строку */
+
+  &.opened {
+    width: 200px;
+  }
+
+  /* Минимальная ширина в закрытом состоянии */
+  width: 50px;
+
+  /* Плавный переход для width при изменении состояния */
+  transition: width 0.5s ease;
+
+  /* Устанавливаем минимальную ширину для подменю и иконок */
+  //   .sidebar.opened .sub-menu {
+  //     width: 100px; /* Минимальная ширина подменю при открытом состоянии */
+  //   }
+
+  /* Скрытие текста меню при закрытом состоянии */
+  //   .sidebar.opened .menu-item {
+  //     display: inline-block;
+  //   }
+
+  /* Плавная анимация для входа и выхода */
+  //   transition: left 0.8s ease;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    height: 3em;
+    margin-bottom: 20px;
+  }
+
+  img {
+    margin-right: 1px;
+  }
+
+  .span {
+    display: inline-block;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+    padding: 20px;
+  }
+
+  .sub-menu {
+    width: 200px; /* Ширина подменю в открытом состоянии */
+    transition: width 0.5s ease; /* Плавный переход для width при изменении состояния */
+
+    .menu-item {
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      span {
+        display: none; /* Скрыть текст в меню при свернутом состоянии */
+      }
+
+      &.opened span {
+        display: inline-block; /* Показать текст в меню при развернутом состоянии */
+      }
+    }
+
+    //   &.hidden {
+    //     display: none; /* Скрыть элементы при свернутом состоянии */
+    //   }
+    // }
+    // .sidebar.opened .menu-item span {
+    //   display: inline-block;
+    // }
+  }
+}

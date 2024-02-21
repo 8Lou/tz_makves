@@ -1,12 +1,10 @@
-# Тестовое задание
+# Sidebar component layout
 
 Установка зависимостей `npm install`
 
 Запуск проекта `npm run dev`
 
-## Задание
-
-Сверстать компонент `/src/components/Sidebar.jsx` по дизайну ([Анимированная версия](src/assets/design.mp4))
+## Задание ([Анимированная версия](src/assets/design.mp4))
 
 ![design.png](src/assets/design.png)
 
@@ -28,3 +26,7 @@
 - иконки могут не соответствовать, это не так важно
 - больше всего интересует анимация при открытии/закрытии
 - достаточно одной темы (светлой или темной)
+
+Выполнение
+npm install styled-components
+npm install react-sidebar --save
