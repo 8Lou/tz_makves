@@ -1,84 +1,82 @@
 .sidebar {
-  width: 200px;
-  height: 100vh;
-  background-color: #333;
-  color: white;
+  position: relative;
+  border-radius: 11px;
+  height: 85vh;
+  background-color: #000000;
+  color: #9fbad9;
   position: fixed;
-  top: 0;
-  padding: 20px;
+  // top: 0;
+  padding: 15px;
+  margin: 30px;
   transition: width 0.5s;
-  //   white-space: nowrap; /* Сворачивание текста в одну строку */
+  border: 1px solid #313742;
+  box-shadow: 0 0 5px #000000; /* 3D эффект тени */
 
-  &.opened {
-    width: 200px;
+  .button {
+    border: none;
+    border-radius: 50%;
+    position: relative;
+    background: #1e293b;
+    color: #ffffff;
+    font-size: 14px;
+    height: 21px;
   }
 
-  /* Минимальная ширина в закрытом состоянии */
-  width: 50px;
+  .button.right {
+    right: auto;
+    left: 166px;
+    position: fixed;
+    position: absolute;
+  }
 
-  /* Плавный переход для width при изменении состояния */
-  transition: width 0.5s ease;
-
-  /* Устанавливаем минимальную ширину для подменю и иконок */
-  //   .sidebar.opened .sub-menu {
-  //     width: 100px; /* Минимальная ширина подменю при открытом состоянии */
-  //   }
-
-  /* Скрытие текста меню при закрытом состоянии */
-  //   .sidebar.opened .menu-item {
-  //     display: inline-block;
-  //   }
-
-  /* Плавная анимация для входа и выхода */
-  //   transition: left 0.8s ease;
+  .button.left {
+    background: #000000;
+    right: -40px;
+  }
 
   .logo {
     display: flex;
     align-items: center;
-    height: 3em;
-    margin-bottom: 20px;
-  }
-
-  img {
-    margin-right: 1px;
+    height: 2.5em;
   }
 
   .span {
     display: inline-block;
     transition: opacity 0.3s ease-in-out;
     opacity: 1;
-    padding: 20px;
   }
-
+  .span__logo {
+    font-size: 19px;
+    color: #ffffff;
+  }
   .sub-menu {
-    width: 200px; /* Ширина подменю в открытом состоянии */
-    transition: width 0.5s ease; /* Плавный переход для width при изменении состояния */
+    transition: width 0.5s ease; /* Плавный переход для width */
 
     .menu-item {
-      padding: 10px;
+      padding: 15px;
       display: flex;
       align-items: center;
       cursor: pointer;
 
       &:hover {
+        background-color: #0f172a;
+        border-radius: 8px;
+        color: rgb(254, 254, 254);
         cursor: pointer;
       }
 
       span {
-        display: none; /* Скрыть текст в меню при свернутом состоянии */
+        display: none; /* Скрыть текст при свернутом состоянии */
+        padding-left: 15px;
       }
 
       &.opened span {
-        display: inline-block; /* Показать текст в меню при развернутом состоянии */
+        display: inline-block; /* Показать текст при развернутом состоянии */
       }
     }
-
-    //   &.hidden {
-    //     display: none; /* Скрыть элементы при свернутом состоянии */
-    //   }
-    // }
-    // .sidebar.opened .menu-item span {
-    //   display: inline-block;
-    // }
+  }
+  .bottom-menu {
+    // border-bottom: 1px solid #fff; /* Линия-разделитель между topRoutes и bottomRoutes */
+    padding-top: 5em; /* Внутренний отступ для bottomRoutes */
   }
 }

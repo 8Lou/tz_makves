@@ -5,10 +5,10 @@ import Sidebar from "./components/Sidebar";
 
 library.add(fas);
 
-export default class App extends React.Component{
-  render () {
-      return (
-          <Sidebar />
-      )
+export default class App extends React.Component {
+  render() {
+    return (
+      <Sidebar />
+    )
   }
 }
