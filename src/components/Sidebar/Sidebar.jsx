@@ -24,6 +24,7 @@ export default class Sidebar extends React.Component {
 
         this.state = {
             isOpened: true,
+            rotated: false // состояние вращения компонента 
         };
     }
 
@@ -35,6 +36,14 @@ export default class Sidebar extends React.Component {
             }
         });
     };
+
+    rotateIcon = () => {
+        this.setState((prevState) => {
+            const rotated = !prevState.rotated;
+            const direction = this.state.isOpened ? 1 : -1; // Если развернут, вращаем по часовой стрелке, иначе против
+            return { rotated, rotationDirection: direction };
+        });
+    }; // меняем состояние `rotated`
 
     updateContainerWidth = () => {
         const container = document.querySelector('.sidebar');
@@ -65,7 +74,11 @@ export default class Sidebar extends React.Component {
                         onClick={this.toggleSidebar}
                         title={isOpened ? 'Shrink' : 'Expand'}
                     >
-                        <FontAwesomeIcon icon={isOpened ? 'angle-left' : 'angle-right'} />
+                        <FontAwesomeIcon
+                            className={`rotate-icon ${this.state.rotated ? 'rotated' : ''}`}
+                            icon={isOpened ? 'angle-left' : 'angle-right'}
+                            onClick={this.rotateIcon}
+                        />
                     </button>
                 </div>
 
