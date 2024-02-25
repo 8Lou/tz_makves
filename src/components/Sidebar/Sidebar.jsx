@@ -63,6 +63,7 @@ export default class Sidebar extends React.Component {
                     <button
                         className={`button ${isOpened ? 'right' : 'left'}`}
                         onClick={this.toggleSidebar}
+                        title={isOpened ? 'Shrink' : 'Expand'}
                     >
                         <FontAwesomeIcon icon={isOpened ? 'angle-left' : 'angle-right'} />
                     </button>
@@ -72,8 +73,10 @@ export default class Sidebar extends React.Component {
                     {routes.map((route) => (
                         <div key={route.title} className={`menu-item ${isOpened ? 'opened' : ''}`}
                             onClick={() => this.goToRoute(route.path)}>
-                            <FontAwesomeIcon icon={route.icon} />
-                            <span>{route.title}</span>
+                            <div className="div-icon">
+                                <FontAwesomeIcon icon={route.icon} />
+                            </div>
+                            <span className='span__item'>{route.title}</span>
                         </div>
                     ))
                     }
@@ -83,13 +86,15 @@ export default class Sidebar extends React.Component {
                     {bottomRoutes.map((route) => (
                         <div key={route.title} className={`menu-item ${isOpened ? 'opened' : ''}`}
                             onClick={() => this.goToRoute(route.path)}>
-                            <FontAwesomeIcon icon={route.icon} />
+                            <div className="div-icon">
+                                <FontAwesomeIcon className='icon' icon={route.icon} />
+                            </div>
                             <span>{route.title}</span>
                         </div>
                     ))
                     }
                 </div>
-            </div>
+            </div >
         );
     }
 }
